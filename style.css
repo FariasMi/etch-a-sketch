@@ -1,0 +1,29 @@
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+:root{
+    --grid-length:1;
+    --change-color:blue;
+}
+#container{
+    display: grid;
+    grid-template-columns: repeat(var(--grid-length),1fr);
+    margin:0 auto;
+    margin-top: 10px;
+    width: 500px;
+    height: 650px;
+    border: 1px solid black;
+   
+    
+}
+
+.divGrid{
+    border: 0.5px solid gray;
+    min-width: 5px;
+    min-height: 5px;
+   
+}
+.divGrid :hover{
+    background-color:blueviolet;
+}
