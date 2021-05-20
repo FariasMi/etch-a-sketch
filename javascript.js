@@ -14,19 +14,21 @@ function createGrid(gridLen){
 }
 
   
-function removeGrid(){
-    const removeGridElements = document.getElementsByClassName('divGrid');
-      while (removeGridElements[0]) {
-        removeGridElements[0].parentNode.removeChild(removeGridElements[0]);
+function removeGridElements(){
+    const gridElements = document.getElementsByClassName('divGrid');
+      while (gridElements[0]) {
+        gridElements[0].parentNode.removeChild(gridElements[0]);
     }
 }
 
-function clear(){
-    const gridElements = document.getElementsByClassName('divGrid');
-    gridElements
-    //if()
-
-}
+function clearGridColors(){
+  const divGrids = document.querySelectorAll('div.divGrid');
+  for(i=0;i<divGrids.length;i++){
+    divGrids[i].style.backgroundColor='rgba(0, 0, 0, 0)';
+    }
+  
+  }
+ 
 
 function colorGen(e) {
     const r = Math.floor(Math.random() * 256);
@@ -38,11 +40,12 @@ function colorGen(e) {
 
 function setGrid(e){   
    let gridLength= e.target.value;
-   removeGrid();
+   removeGridElements();
    createGrid(gridLength);
    
 }
 
      createGrid(50);
      document.getElementById('range-grid').addEventListener('change',setGrid);
-     //document.getElementById('clear').addEventListener('click';
+     document.getElementById('clear').addEventListener('click',clearGridColors);
+    
