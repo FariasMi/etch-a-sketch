@@ -27,15 +27,24 @@ function clearGridColors(){
     divGrids[i].style.backgroundColor='rgba(0, 0, 0, 0)';
       }
   }
+  function eraseGridColors(){    
+    const divGrids = document.querySelectorAll('div.divGrid');
+    for(i=0;i<divGrids.length;i++){   
+      let divGrid = divGrids[i];
+      divGrids[i].addEventListener('mouseover',() =>{
+      divGrid.style.backgroundColor = backgroundColor='rgba(0, 0, 0, 0)';
 
+      });
+        
+     }
+    }
 
 function colorGen(e) {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
     e.target.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
-    console.log();
-  }
+    }
 
   function watchColorPicker(e){
     let color = e.target.value;
@@ -55,8 +64,7 @@ function colorGen(e) {
       const divGrids = document.querySelectorAll('div.divGrid');
       for(i=0;i<divGrids.length;i++){   
         let divGrid = divGrids[i];
-        console.log('divGrid');
-         divGrid.addEventListener('mouseover',colorGen);
+       console.log(divGrid.addEventListener('mouseover',colorGen));
         
      }
     }
@@ -77,4 +85,5 @@ function setGrid(e){
      document.getElementById('range-grid').addEventListener('change',setGrid);
      document.getElementById('color').addEventListener('change',watchColorPicker);
      document.getElementById('clear').addEventListener('click',clearGridColors);
+     document.getElementById('erase').addEventListener('click',eraseGridColors);
      document.getElementById('random').addEventListener('click',randomColorGen);
