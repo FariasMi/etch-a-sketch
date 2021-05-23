@@ -9,11 +9,24 @@
     <title>Document</title>
 </head>
 <body>
- <input type="range" name="range-grid" id="range-grid" min="1" max="64">
-<div id="container"></div>
-<button type="button" id='clear'> clear</button>
+    <header>
+        <h1>Etch-A-Sketch</h1>
+        <p>Size: 50 x 50</p>
+    </header>
+    <div id="container"></div>
+    <div class ="wrap-buttons">            
+        <button type="button" id="clear"> clear</button>
+        <button type="button" id="random">random</button>
+        <input type="color"   id="color" value="#000000">
+    </div>
+    <div class="box">
+            <span id="rangeValue">50</span>
+            <input type="range" name="range-grid" id="range-grid" min="1" max="64">
+    </div>
+
+          
    
-<script src="javascript.js"></script>
+    <script src="javascript.js"></script>
     
 </body>
 </html>

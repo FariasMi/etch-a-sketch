@@ -23,29 +23,58 @@ function removeGridElements(){
 
 function clearGridColors(){
   const divGrids = document.querySelectorAll('div.divGrid');
-  for(i=0;i<divGrids.length;i++){
+  for(i=0;i<divGrids.length;i++){    
     divGrids[i].style.backgroundColor='rgba(0, 0, 0, 0)';
-    }
-  
+      }
   }
- 
+
 
 function colorGen(e) {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
     e.target.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+    console.log();
   }
-  
+
+  function watchColorPicker(e){
+    let color = e.target.value;
+    const divGrids = document.querySelectorAll('div.divGrid');
+    for(i=0;i<divGrids.length;i++){   
+      let divGrid = divGrids[i];
+      divGrids[i].addEventListener('mouseover',() =>{
+      divGrid.style.backgroundColor = color;
+
+      });
+        
+     }
+    }
+
+    function randomColorGen() {
+      console.log('aqui');
+      const divGrids = document.querySelectorAll('div.divGrid');
+      for(i=0;i<divGrids.length;i++){   
+        let divGrid = divGrids[i];
+        console.log('divGrid');
+         divGrid.addEventListener('mouseover',colorGen);
+        
+     }
+    }
+
 
 function setGrid(e){   
-   let gridLength= e.target.value;
+  let gridLength= e.target.value;
+  const para =document.querySelector('p');
+  const rangeValue = document.getElementById('rangeValue');
+  rangeValue.textContent = gridLength;
+  para.textContent = 'Size: '+gridLength+' x '+gridLength;
+   
    removeGridElements();
-   createGrid(gridLength);
+   createGrid(gridLength);   
    
 }
-
      createGrid(50);
      document.getElementById('range-grid').addEventListener('change',setGrid);
+     document.getElementById('color').addEventListener('change',watchColorPicker);
      document.getElementById('clear').addEventListener('click',clearGridColors);
-    
+     document.getElementById('random').addEventListener('click',randomColorGen);
