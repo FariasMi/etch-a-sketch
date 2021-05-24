@@ -1,5 +1,5 @@
 # etch-a-sketch
-It's a project from  The Odin project to learn DOM Manipulation with javascript
+It's a project from  The Odin project to learn DOM Manipulation with javascript.
 
 ## Icons
 - :package: New feature
