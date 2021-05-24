@@ -60,13 +60,18 @@ function colorGen(e) {
     }
 
     function randomColorGen() {
-      console.log('aqui');
+      var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+
       const divGrids = document.querySelectorAll('div.divGrid');
       for(i=0;i<divGrids.length;i++){   
         let divGrid = divGrids[i];
-       console.log(divGrid.addEventListener('mouseover',colorGen));
+       divGrid.addEventListener('mouseover',() =>{
+        divGrid.style.backgroundColor = randomColor;
+
+       });
+      }
         
-     }
+    
     }
 
 
