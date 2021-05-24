@@ -77,11 +77,9 @@ function colorGen(e) {
 
 function setGrid(e){   
   let gridLength= e.target.value;
-  const para =document.querySelector('p');
   const rangeValue = document.getElementById('rangeValue');
   rangeValue.textContent = gridLength;
-  para.textContent = 'Size: '+gridLength+' x '+gridLength;
-   
+     
    removeGridElements();
    createGrid(gridLength);   
    
