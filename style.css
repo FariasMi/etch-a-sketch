@@ -20,8 +20,9 @@ html,body{
 
 @font-face {
     font-family: CSNPWDT NFI;
-    src: url(../fonts/csnpwdt-nfi/csnpwdt-nfi.ttf);
+    src: url(./fonts/csnpwdt-nfi/csnpwdt-nfi.ttf);
 }
+
 
 
 textarea:focus, input:focus,button:focus{
